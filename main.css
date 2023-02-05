@@ -1,0 +1,120 @@
+@font-face {
+  font-family: "LeeSeoyun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+} 
+
+
+body {
+	font-family: "LeeSeoyun";
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	background-image: url("./background.png");
+}
+
+/* 너비는 390픽셀, 배경색 설정, 부모(body) 높이 전체 */
+.container {
+	width: 390px;
+	background-color: #cdd3f7;
+	height: 100%;
+}
+
+/* 위로 여유 30픽셀 */
+.photos {
+	margin-top: 30px;
+}
+
+
+/* 배경 흰색, 좌우 마진 20픽셀 */
+/* 상하 마진 15픽셀, 높이는 각 사진마다 200 픽셀 */
+.photo-frame {
+	background-color: white;
+	margin: 15px 20px;
+	height: 200px;
+
+  background-size: cover;
+  position: relative;
+  cursor: pointer; /* 마우스가 사진 위로 올라가면 포인터 아이콘으로 바뀌도록 */
+  
+}
+
+/* 아래 영역 전체, flexible, 그 내부 아이템들은 세로로 */
+/* 모두 가운데 정렬 */
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* 아래 영역의 제목 부분은 폰트가 좀 두껍고, 사이즈는 25픽셀, 흰색 */
+.f-title {
+	font-size: 25px;
+	font-weight: 900;
+	color: white;
+}
+
+/* 아래 영역의 날짜 부분은 폰트가 중간 두께고, 사이즈는 15픽셀, 흰색 */
+.f-date {
+	font-size: 15px;
+	font-weight: 500;
+	color: white;
+}
+
+
+#image1 {
+	background-image: url("./img1.png");
+}
+
+#image2 {
+	background-image: url("./img2.png");
+}
+
+#image3 {
+	background-image: url("./img3.png");
+}
+
+/* #image4 {
+	background-image: url("./img4.jpeg");
+} */
+
+.video {
+	width: 100%;
+	height: 100%;
+}
+
+.photo-description {
+	/* 배경은 파란색, 글자는 흰색 */
+	color: white;
+	background-color: #a5b1fa;
+
+	/* 가로 너비는 내부 콘텐츠에 맞도록 */
+	width: fit-content;
+	padding: 0 20px;
+	margin-bottom: 10px;
+
+	/* 경계선 */
+	border-radius: 10px;
+
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%);
+  left: 50%;
+
+  opacity: 0; /* 초반에 페이지 열릴 때 기본으로 안보이게 하기 위한 설정 */
+}
+
+
+/* opacity : 투명도. 0% 투명하다. 즉 다 보인다. */
+.showText {
+	opacity: 0;
+}
+
+/* opacity : 100% 투명하다. 즉 안보인다. */
+/* transition : 나타날 때 0.5초동안 천천히 나타나는 효과 */
+.hideText {
+	opacity: 1;
+  transition: opacity 0.5s linear;
+}
